@@ -1,5 +1,5 @@
 import javax.swing.JOptionPane;
-import com.logicbig.example.CommandLineTable;
+import com.logicbig.example.Tabela;
 import javax.swing.JDialog;
 
 public class ArrecadamentoMultas {
@@ -16,7 +16,7 @@ public class ArrecadamentoMultas {
 		numeroDeMotoristas = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o número total de motoristas: ", "Total de Condutores", JOptionPane.INFORMATION_MESSAGE));
 		
 		//Cria uma tabela e define as colunas e cabeçalhos:
-		CommandLineTable st = new CommandLineTable();
+		Tabela st = new Tabela();
 		st.setShowVerticalLines(true);
         st.setHeaders("Documento Motorista", "Valor Total de Pontos", "Valor Total de Multas");
 		
