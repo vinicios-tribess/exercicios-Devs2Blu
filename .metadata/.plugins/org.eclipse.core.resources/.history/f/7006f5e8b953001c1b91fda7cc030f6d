@@ -1,0 +1,20 @@
+
+public class dowhile {
+
+	public static void main(String[] args) {
+		
+		int i = 1;
+		
+		do {
+			System.out.println("Passei a " + i + "ª vez no do while.");
+			i++;
+		} while (i < 5);
+		
+		while (i > 0) {
+			System.out.println("Passei a " + i + "ª vez no while.");
+			i--;
+		}
+
+	}
+
+}

@@ -1,0 +1,57 @@
+import javax.swing.JOptionPane;
+
+public class dowhile {
+
+	public static void main(String[] args) {
+		
+		int option = 0;
+		float n1 = 0; 
+		float n2 = 0; 
+		float result;
+		
+		do {
+			try {
+				option = Integer.parseInt(JOptionPane.showInputDialog("Digite uma opção: "
+						+ "\n 1 -> Somar\n 2 -> Subtrair\n 3 -> Multiplicar\n 4 -> Dividir\n 9 -> Sair"));
+				switch (option) {
+				case 1: {
+					n1 = Float.parseFloat(JOptionPane.showInputDialog("Informe o 1º número:"));
+					n2 = Float.parseFloat(JOptionPane.showInputDialog("Informe o 2º número:"));
+					result = n1 + n2;
+					JOptionPane.showMessageDialog(null, n1 + " + " + n2 + " = " + result);
+					break;
+				}
+				case 2: {
+					n1 = Float.parseFloat(JOptionPane.showInputDialog("Informe o 1º número:"));
+					n2 = Float.parseFloat(JOptionPane.showInputDialog("Informe o 2º número:"));
+					result = n1 - n2;
+					JOptionPane.showMessageDialog(null, "A subtração do 1º menos o 2º número é igual a " + result);
+					break;
+				}
+				case 3: {
+					n1 = Float.parseFloat(JOptionPane.showInputDialog("Informe o 1º número:"));
+					n2 = Float.parseFloat(JOptionPane.showInputDialog("Informe o 2º número:"));
+					result = n1 * n2;
+					JOptionPane.showMessageDialog(null, "A multiplicação do 1º mais o 2º número é igual a " + result);
+					break;
+				}
+				case 4: {
+					JOptionPane.showMessageDialog(null, "Consultar selecionado!");
+					break;
+				}
+				case 9: {
+					JOptionPane.showMessageDialog(null, "Programa fechado com sucesso!");
+					break;
+				}
+				default:
+					JOptionPane.showMessageDialog(null, option + " é uma opção inválida! Tente novamente.");
+				}
+			} 
+			catch(java.lang.NumberFormatException e) {
+				JOptionPane.showMessageDialog(null, "A entrada inserida é inválida! Tente novamente.");
+			}
+		} while (option != 9);
+
+	}
+
+}

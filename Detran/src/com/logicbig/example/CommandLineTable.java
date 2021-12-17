@@ -90,7 +90,7 @@ public class CommandLineTable {
 
     public static void main(String[] args) {
         
-        Tabela st = new Tabela();
+        CommandLineTable st = new CommandLineTable();
         
         int qtdItems;
 		Float totalInvoice = 0.00f;

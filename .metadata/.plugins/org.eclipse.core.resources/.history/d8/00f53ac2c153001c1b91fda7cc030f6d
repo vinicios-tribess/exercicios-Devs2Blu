@@ -1,0 +1,40 @@
+import javax.swing.JOptionPane;
+
+public class dowhile {
+
+	public static void main(String[] args) {
+		
+		int option;
+		
+		do {
+			option = Integer.parseInt(JOptionPane.showInputDialog("Digite uma opção: "
+					+ "\n 1 -> Incluir\n 2 -> Alterar\n 3 -> Excluir\n 4 -> Consultar\n 9 -> Sair"));
+			switch (option) {
+			case 1: {
+				JOptionPane.showMessageDialog(null, "Incluir selecionado!");
+				break;
+			}
+			case 2: {
+				JOptionPane.showMessageDialog(null, "Alterar selecionado!");
+				break;
+			}
+			case 3: {
+				JOptionPane.showMessageDialog(null, "Excluir selecionado!");
+				break;
+			}
+			case 4: {
+				JOptionPane.showMessageDialog(null, "Consultar selecionado!");
+				break;
+			}
+			case 9: {
+				JOptionPane.showMessageDialog(null, "Programa fechado com sucesso!");
+				break;
+			}
+			default:
+				JOptionPane.showMessageDialog(null, option + " <- Opção inválida! Tente novamente.");
+			}
+		} while (option != 9);
+
+	}
+
+}

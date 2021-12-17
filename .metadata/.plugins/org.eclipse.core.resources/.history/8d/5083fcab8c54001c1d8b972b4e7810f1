@@ -1,0 +1,22 @@
+import javax.swing.JOptionPane;
+
+public class notaFiscal {
+
+	public static void main(String[] args) {
+		
+		int qtdItems;
+		qtdItems = Integer.parseInt(JOptionPane.showInputDialog("Enter the quantity of items:"));
+
+		for (int i = 0; i < qtdItems; i++) {
+			String codeItem;
+			String descItem;
+			int unitValueItem;
+			codeItem = JOptionPane.showInputDialog("Enter the code of the " + i + "º item:");
+			descItem = JOptionPane.showInputDialog("Enter the description of the " + i + "º item:");
+			unitValueItem = Integer.parseInt(JOptionPane.showInputDialog("Enter the value of the " + i + "º item:"));
+			
+		}
+		
+	}
+
+}

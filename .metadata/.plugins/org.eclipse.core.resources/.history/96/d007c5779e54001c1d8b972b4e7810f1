@@ -1,0 +1,29 @@
+import javax.swing.JOptionPane;
+
+public class notasAlunos {
+
+	public static void main(String[] args) {
+		
+		int qtdAlunos;
+		int qtdNotas;
+		Float nota;
+		int[] alunos;
+		Float[] notas;
+		
+		qtdAlunos = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade total de alunos:"));
+		alunos = new int[qtdAlunos];
+		qtdNotas  = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de notas por alunos:"));
+		
+		for (int a = 0; a < qtdAlunos; a++) {
+			
+			notas = new Float[qtdNotas];
+			
+			for (int n = 0; n < qtdNotas; n++) {
+				
+				nota = Float.parseFloat(JOptionPane.showInputDialog("Digite a " + (n + 1) + "ª nota do " + (a + 1) + "º aluno:"));
+				notas[n] = nota;
+			}
+			System.out.println(notas);
+		}
+	}
+}

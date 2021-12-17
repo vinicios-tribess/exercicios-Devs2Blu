@@ -1,0 +1,17 @@
+import javax.swing.JOptionPane;
+
+public class TrabalhandoComArrays {
+
+	public static void main(String[] args) {
+		
+		int[] meuArray;
+		meuArray = new int[10];
+
+		for (int i = 0; i < 10; i++) {
+			meuArray[i] = Integer.parseInt(JOptionPane.showInputDialog("Digite o " + i + "º número:"));
+		}
+		
+		System.out.println(meuArray);
+	}
+
+}

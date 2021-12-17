@@ -1,0 +1,39 @@
+import javax.swing.JOptionPane;
+import java.io.*;
+
+public class notaFiscal {
+
+	public static void main(String[] args) {
+		
+		Console cnsl = System.console();
+		String fmt = "%1$4s %2$10s %3$10s%n";
+		
+		int qtdItems;
+		Float totalInvoice = 0.00f;
+		
+		cnsl.printf(fmt, "Items", "Quantity", "Price");
+        cnsl.printf(fmt, "-----", "------", "-----");
+		
+		qtdItems = Integer.parseInt(JOptionPane.showInputDialog("Enter the quantity of items:"));
+
+		for (int i = 1; i < (qtdItems + 1); i++) {
+			String codeItem;
+			String descItem;
+			Float unitValueItem;
+			Float soldAmount;
+			Float totalValueItem;
+			
+			codeItem = JOptionPane.showInputDialog("Enter the code of the " + i + "º item:");
+			descItem = JOptionPane.showInputDialog("Enter the description of the " + i + "º item:");
+			unitValueItem = Float.parseFloat(JOptionPane.showInputDialog("Enter the value of the " + i + "º item:"));
+			soldAmount = Float.parseFloat(JOptionPane.showInputDialog("Enter the sold amount of the" + i + "º item:"));
+			totalValueItem = unitValueItem * soldAmount;
+			totalInvoice += totalValueItem;
+			
+			cnsl.printf(fmt, codeItem, descItem, "80");
+			
+		}
+		
+	}
+
+}

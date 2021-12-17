@@ -1,0 +1,28 @@
+import javax.swing.JOptionPane;
+import java.util.Arrays;
+
+public class TrabalhandoComArrays {
+
+	public static void main(String[] args) {
+		
+		String biggest_num;
+		int qtdNumbers;
+		int[] meuArray;
+		meuArray = new int[10];
+		
+		do {
+			
+			qtdNumbers = Integer.parseInt(JOptionPane.showInputDialog("Digite um número até 10:"));
+			
+		} while (qtdNumbers >= 10 || qtdNumbers <= 0);
+		
+		for (int i = 0; i < qtdNumbers; i++) {
+			meuArray[i] = Integer.parseInt(JOptionPane.showInputDialog("Type the " + (i + 1) + "º number:"));
+		}
+		
+		Arrays.sort(meuArray);
+		biggest_num = Integer.toString(meuArray[9]);
+		JOptionPane.showMessageDialog(null, "The biggest value typed was " + biggest_num + "!");
+	}
+
+}
