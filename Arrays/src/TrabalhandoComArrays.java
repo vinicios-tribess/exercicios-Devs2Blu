@@ -11,7 +11,7 @@ public class TrabalhandoComArrays {
 		
 		do {
 			
-			qtdNumbers = Integer.parseInt(JOptionPane.showInputDialog("Digite um número de 1 a 10:"));
+			qtdNumbers = Integer.parseInt(JOptionPane.showInputDialog("Type a number from 1 to 10: "));
 			meuArray = new Float[qtdNumbers];
 			
 		} while (qtdNumbers > 10 || qtdNumbers < 1);
