@@ -1,39 +1,60 @@
 package classes;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import util.Conexao;
+
 public class Avaliacao {
 
-    private int    codAluno;
-    private int    codDisciplina;
-    private int    nrAvaliacao;
-    private Double vlrNota;
+    private int    codaluno;
+    private int    coddisciplina;
+    private int    nravaliacao;
+    private Double vlrnota;
 
     public int getCodAluno() {
-		return codAluno;
+		return codaluno;
 	}
 	public void setCodAluno(int codAluno) {
-		this.codAluno = codAluno;
+		this.codaluno = codAluno;
 	}
 	public int getCodDisciplina() {
-		return codDisciplina;
+		return coddisciplina;
 	}
 	public void setCodDisciplina(int codDisciplina) {
-		this.codDisciplina = codDisciplina;
+		this.coddisciplina = codDisciplina;
 	}
 	public int getNrAvaliacao() {
-		return nrAvaliacao;
+		return nravaliacao;
 	}
 	public void setNrAvaliacao(int nrAvaliacao) {
-		this.nrAvaliacao = nrAvaliacao;
+		this.nravaliacao = nrAvaliacao;
 	}
 	public Double getVlrNota() {
-		return vlrNota;
+		return vlrnota;
 	}
 	public void setVlrNota(Double vlrNota) {
-		this.vlrNota = vlrNota;
+		this.vlrnota = vlrNota;
 	}
 	
 	public void incluirAvaliacao() {
-        // TODO implement here
+		 try {
+	        	Connection con = Conexao.conectar();
+	    		String sql = "Insert into avaliacao(codaluno, coddisciplina, nravaliacao, vlrnota) values (?, ?, ?, ?)";
+	        	
+				PreparedStatement stm = con.prepareStatement(sql);
+				stm.setInt(1, this.codaluno);
+				stm.setInt(2, this.coddisciplina);
+				stm.setInt(3, this.nravaliacao);
+				stm.setDouble(4, this.vlrnota);
+				stm.execute();
+				System.out.println("Dados inseridos com sucesso!");
+				Conexao.fecharConexao();
+	        } catch (SQLException e) { 	
+	        	e.printStackTrace();
+	        	Conexao.fecharConexao();
+	        }
     }
 	
     public void alterarAvaliacao() {
@@ -44,10 +65,12 @@ public class Avaliacao {
         // TODO implement here
     }
     
+    public void consultarAvaliacao() {
+        // TODO implement here
+    }
+    
     public void listarAvaliacoes() {
         // TODO implement here
     }
-
-    
     
 }

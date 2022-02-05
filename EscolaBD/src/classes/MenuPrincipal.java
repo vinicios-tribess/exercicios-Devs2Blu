@@ -5,8 +5,8 @@ import java.sql.Date;
 public class MenuPrincipal {
 
 	public static void main(String[] args) {
-		
-	  /*
+	
+		/*
 		chamaIncluirAluno("Gabriela", "Raquel", "Rafael", "2003-09-19", 8.0, "A");
 		chamaIncluirAluno("Pedro", "Mariza", "Frederico", "2004-10-22", 4.5, "R");
 		chamaIncluirAluno("Vinicios", "Tânia", "Edemir", "2001-01-31", 9.0, "A");
@@ -14,9 +14,9 @@ public class MenuPrincipal {
 		chamaExcluirAluno(2);
 		chamaConsultarAluno(3);
 		chamaListarAlunos();
-	   */
+		*/
 		
-	  /*
+		/*
 	    chamaIncluirDisciplina("Matemática", "Cláudia", 3);
 		chamaIncluirDisciplina("História", "Gustavo", 4);
 		chamaIncluirDisciplina("Geografia", "Sandra", 2);
@@ -24,7 +24,23 @@ public class MenuPrincipal {
 		chamaExcluirDisciplina(3);
 		chamaConsultarDisciplina(1);
 		chamaListarDisciplinas();
-	   */
+		*/
+	
+		/*
+		chamaIncluirMatricula(1, 2, "2019-01-26", "A");
+		chamaIncluirMatricula(1, 3, "2019-01-26", "A");
+		chamaIncluirMatricula(2, 1, "2019-02-01", "A");
+		chamaIncluirMatricula(2, 3, "2019-02-01", "A");
+		chamaIncluirMatricula(3, 2, "2019-02-03", "I");
+		*/
+		
+		/*
+		chamaIncluirAvaliacao(1, 2, 1, 9.5);
+		chamaIncluirAvaliacao(1, 3, 2, 7.0);
+		chamaIncluirAvaliacao(2, 1, 1, 9.0);
+		chamaIncluirAvaliacao(2, 3, 3, 6.5);
+		chamaIncluirAvaliacao(3, 2, 1, 4.0);
+		*/
 		
 	}
 	
@@ -113,5 +129,39 @@ public class MenuPrincipal {
 			System.out.println();
 		}
 	}
-
+	
+	// Métodos da classe Matricula:
+	
+	public static void chamaIncluirMatricula(int codaluno, int coddisciplina, String dtmatricula, String statusmatricula) {
+		Matricula mat = new Matricula();
+		mat.setCodAluno(codaluno);
+		mat.setCodDisciplina(coddisciplina);
+		mat.setDtMatricula(Date.valueOf(dtmatricula));
+		mat.setStatusMatricula(statusmatricula);
+		mat.incluirMatricula();
+	}
+	public static void chamaAlterarMatricula(int codaluno, int coddisciplina, String dtmatricula, String statusmatricula) {
+		Matricula mat = new Matricula();
+		mat.setCodAluno(codaluno);
+		mat.setCodDisciplina(coddisciplina);
+		mat.setDtMatricula(Date.valueOf(dtmatricula));
+		mat.setStatusMatricula(statusmatricula);
+		mat.alterarMatricula();
+	}
+	public static void chamaExcluirMatricula(int codaluno, int coddisciplina) {
+		Matricula mat = new Matricula();
+		mat.excluirMatricula(codaluno, coddisciplina);
+	}
+	
+	// Métodos da classe Avaliacao:
+	
+	public static void chamaIncluirAvaliacao(int codaluno, int coddisciplina, int nravaliacao, Double vlrnota) {
+		Avaliacao ava = new Avaliacao();
+		ava.setCodAluno(codaluno);
+		ava.setCodDisciplina(coddisciplina);
+		ava.setNrAvaliacao(nravaliacao);
+		ava.setVlrNota(vlrnota);
+		ava.incluirAvaliacao();
+	}
+	
 }
