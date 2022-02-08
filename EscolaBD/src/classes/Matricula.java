@@ -2,8 +2,12 @@ package classes;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import util.Conexao;
 
 public class Matricula {
@@ -77,6 +81,7 @@ public class Matricula {
          	Conexao.fecharConexao();
          }
     }
+    
     public void excluirMatricula(int codaluno, int coddisciplina) {
     	try {
          	Connection con = Conexao.conectar();
@@ -93,11 +98,48 @@ public class Matricula {
          	Conexao.fecharConexao();
          }
     }
-    public void consultarMatricula() {
-        // TODO implement here
+    
+    public Matricula consultarMatricula(int codaluno, int coddisciplina) {
+    	Matricula mat = new Matricula();
+		String sql = "Select * from matricula where codaluno=" + codaluno + " AND coddisciplina=" + coddisciplina;
+		try {
+			PreparedStatement stm  = Conexao.conectar().prepareStatement(sql);
+			ResultSet rs = stm.executeQuery();
+			if(rs.next()) {
+				mat.setCodAluno(rs.getInt("codaluno"));	
+				mat.setCodDisciplina(rs.getInt("coddisciplina"));
+				mat.setDtMatricula(rs.getDate("dtmatricula"));
+				mat.setStatusMatricula(rs.getString("statusmatricula"));
+				Conexao.fecharConexao();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			Conexao.fecharConexao();
+		}		
+		return mat;
     }
-    public void listarMatricula() {
-        // TODO implement here
+    
+    public List<Matricula> listarMatriculas() {
+    	List<Matricula> lista = new ArrayList<>();
+    	Connection con = Conexao.conectar();
+    	String sql = "Select codaluno, coddisciplina, dtmatricula, statusmatricula from matricula";
+    	try {
+    		PreparedStatement stm = con.prepareStatement(sql);
+    		ResultSet rs = stm.executeQuery();
+    		while (rs.next()) {
+    			Matricula mat = new Matricula();
+    			mat.setCodAluno(rs.getInt("codaluno"));
+    			mat.setCodDisciplina(rs.getInt("coddisciplina"));
+    			mat.setDtMatricula(rs.getDate("dtmatricula"));
+				mat.setStatusMatricula(rs.getString("statusmatricula"));
+    			lista.add(mat);
+    		}
+    		Conexao.fecharConexao();
+    	} catch (SQLException ex) {
+    		System.out.println("Erro: " + ex.getMessage());
+    		Conexao.fecharConexao();
+    	}
+		return lista;
     }
 
 }

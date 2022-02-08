@@ -1,11 +1,13 @@
 package classes;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MenuPrincipal {
 
 	public static void main(String[] args) {
-	
+
 		/*
 		chamaIncluirAluno("Gabriela", "Raquel", "Rafael", "2003-09-19", 8.0, "A");
 		chamaIncluirAluno("Pedro", "Mariza", "Frederico", "2004-10-22", 4.5, "R");
@@ -27,19 +29,23 @@ public class MenuPrincipal {
 		*/
 	
 		/*
-		chamaIncluirMatricula(1, 2, "2019-01-26", "A");
-		chamaIncluirMatricula(1, 3, "2019-01-26", "A");
-		chamaIncluirMatricula(2, 1, "2019-02-01", "A");
-		chamaIncluirMatricula(2, 3, "2019-02-01", "A");
-		chamaIncluirMatricula(3, 2, "2019-02-03", "I");
+		chamaIncluirMatricula(1, 1, "2019-01-26", "A");
+		chamaIncluirMatricula(2, 2, "2019-01-23", "A");
+		chamaIncluirMatricula(3, 3, "2019-01-20", "I");
+		chamaAlterarMatricula(1, 1, "2019-02-26", "A");
+		chamaExcluirMatricula(2, 2);
+		chamaConsultarMatricula(1, 1);
+		chamaListarMatriculas();
 		*/
 		
 		/*
-		chamaIncluirAvaliacao(1, 2, 1, 9.5);
-		chamaIncluirAvaliacao(1, 3, 2, 7.0);
-		chamaIncluirAvaliacao(2, 1, 1, 9.0);
-		chamaIncluirAvaliacao(2, 3, 3, 6.5);
-		chamaIncluirAvaliacao(3, 2, 1, 4.0);
+		chamaIncluirAvaliacao(1, 1, 1, 9.0);
+		chamaIncluirAvaliacao(2, 2, 1, 8.0);
+		chamaIncluirAvaliacao(3, 3, 1, 4.0);
+		chamaAlterarAvaliacao(1, 1, 1, 10.0);
+		chamaExcluirAvaliacao(1, 1);
+		chamaConsultarAvaliacao(2, 2);
+		chamaListarAvaliacoes();
 		*/
 		
 	}
@@ -152,6 +158,25 @@ public class MenuPrincipal {
 		Matricula mat = new Matricula();
 		mat.excluirMatricula(codaluno, coddisciplina);
 	}
+	public static void chamaConsultarMatricula(int codaluno, int coddisciplina) {
+		Matricula mat = new Matricula().consultarMatricula(codaluno, coddisciplina);
+		System.out.println("Cód. Aluno..: " + mat.getCodAluno());
+		System.out.println("Cód. Discip.: " + mat.getCodDisciplina());
+		System.out.println("Data Matríc.: " + mat.getDtMatricula());
+		System.out.println("Qtd. aval...: " + mat.getStatusMatricula());
+	}
+	public static void chamaListarMatriculas() {
+		Matricula mat = new Matricula();
+		List<Matricula> listaMatriculas = new ArrayList<>();
+		listaMatriculas = mat.listarMatriculas();
+		for (Matricula matricula : listaMatriculas) {
+			System.out.println("Cód. aluno....: " + matricula.getCodAluno());
+			System.out.println("Cód. discipl..: " + matricula.getCodDisciplina());
+			System.out.println("Data matrícula: " + matricula.getDtMatricula());
+			System.out.println("Status matríc.: " + matricula.getStatusMatricula());
+			System.out.println();
+		}
+	}
 	
 	// Métodos da classe Avaliacao:
 	
@@ -162,6 +187,37 @@ public class MenuPrincipal {
 		ava.setNrAvaliacao(nravaliacao);
 		ava.setVlrNota(vlrnota);
 		ava.incluirAvaliacao();
+	}
+	public static void chamaAlterarAvaliacao(int codaluno, int coddisciplina, int nravaliacao, Double vlrnota) {
+		Avaliacao ava = new Avaliacao();
+		ava.setCodAluno(codaluno);
+		ava.setCodDisciplina(coddisciplina);
+		ava.setNrAvaliacao(nravaliacao);
+		ava.setVlrNota(vlrnota);
+		ava.alterarAvaliacao();
+	}
+	public static void chamaExcluirAvaliacao(int codaluno, int coddisciplina) {
+		Avaliacao ava = new Avaliacao();
+		ava.excluirAvaliacao(codaluno, coddisciplina);
+	}
+	public static void chamaConsultarAvaliacao(int codaluno, int coddisciplina) {
+		Avaliacao ava = new Avaliacao().consultarAvaliacao(codaluno, coddisciplina);
+		System.out.println("Cód. Aluno....: " + ava.getCodAluno());
+		System.out.println("Cód. Discip...: " + ava.getCodDisciplina());
+		System.out.println("Nr. Avaliacao.: " + ava.getNrAvaliacao());
+		System.out.println("Vlr. Avaliacao: " + ava.getVlrNota());
+	}
+	public static void chamaListarAvaliacoes() {
+		Avaliacao ava = new Avaliacao();
+		List<Avaliacao> listaAvaliacoes = new ArrayList<>();
+		listaAvaliacoes = ava.listarAvaliacoes();
+		for (Avaliacao avaliacao : listaAvaliacoes) {
+			System.out.println("Cód. aluno....: " + avaliacao.getCodAluno());
+			System.out.println("Cód. discipl..: " + avaliacao.getCodDisciplina());
+			System.out.println("Nr. Avaliacao.: " + avaliacao.getNrAvaliacao());
+			System.out.println("Vlr. Avaliacao: " + avaliacao.getVlrNota());
+			System.out.println();
+		}
 	}
 	
 }
