@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    position: relative;
+    height: 80px;
+    padding: 15px;
+    border-bottom: 2px solid #111;
+    line-height: 110px;
+    background-color: rgb(78, 209, 17);
+}
+
+footer {
+    position: relative;
+    bottom: 0px;
+    height: 50px;
+    padding: 15px;
+    border-top: 2px solid #111;
+    line-height: 110px;
+    background-color: rgb(78, 209, 17);
+}
+
+body {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color: rgba(175, 175, 175, 0.904);
+}
+
+main {
+    min-height: 70vh;
+    display: block;
+    width: 100vw;
+    margin-top: 30px;
+}
+
+.wrapper {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#dados-curriculo {
+    border: 1px solid #111;
+    padding: 0.5em;
+    border-radius: 6px 3px;
+    background-color: #fff;
+    box-shadow: 2px 1px 2px #111;
+}
+
+#dados-curriculo2 {
+    border: 1px solid #111;
+    padding: 0.5em;
+    border-radius: 6px 3px;
+    background-color: rgb(40, 128, 14);
+    box-shadow: 2px 1px 2px #111;
+}
+
+.lista-curriculo {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    display: block;
+    margin: 2px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.foto {
+    width: 200px;
+    display: block;
+    float: left;
+    margin: 5px;
+    border: 3px solid #111;
+}
+
+.logo-img {
+    padding: 0;
+    margin: 0;
+    bottom: 0px;
+}

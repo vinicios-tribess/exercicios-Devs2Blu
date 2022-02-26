@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color: rgb(212, 62, 231);
+}
+
+.wrapper {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    display: block;
+    margin: 2px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Header */
+
+header {
+    position: relative;
+    height: 80px;
+    padding: 15px;
+    border-bottom: 2px solid blue;
+    line-height: 110px;
+    background-color: rgb(78, 209, 17);
+}
+
+/* Main */
+
+main {
+    display: block;
+    width: 100vw;
+}
+
+#dados-pessoais {
+    padding: 1em;
+    position: relative;
+}
+
+#dados-pessoais figcaption {
+    margin: 10px;
+    color: #fff;
+}
+
+.foto {
+    width: 200px;
+    display: block;
+    float: left;
+    margin: 10px;
+}
+
+.foto:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+#dados-curriculo {
+    border: 1px solid #111;
+    padding: 0.5em;
+    border-radius: 6px 3px;
+    background-color: #fff;
+    box-shadow: 2px 1px 2px #111;
+}
+
+.lista-curriculo {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lista-curriculo ul,
+.lista-curriculo ol {
+    display: inline-block;
+    margin: 15px;
+    width: 30%;
+}

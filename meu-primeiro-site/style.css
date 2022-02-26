@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgba(233, 230, 230, 0.4);
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    position: relative;
+    height: auto;
+    /* padding: TB RL */
+    padding: 10px 0;
+}
+
+#topo-site-menu {
+    border-bottom: 2px solid #111;
+    width: 100vw;
+}
+
+#topo-site-menu:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+#logo {
+    display: block;
+    height: 80px;
+    line-height: 80px;
+    width: 50%;
+    float: left;
+}
+
+.logo:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+.logo-topo {
+    display: block;
+    float: left;
+    width: 50px;
+    margin: 20px;
+}
+
+.texto-topo {
+    display: block;
+    float: left;
+}
+
+#menu-horizontal {
+    display: block;
+    float: right;
+    height: 60px;
+    line-height: 60px;
+    width: 40%;
+}
+
+#menu-horizontal ul li {
+    display: inline-block;
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+    list-style: none;
+}
+
+#menu-horizontal ul li a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size:20px;
+    color: red;
+}
+
+#menu-horizontal ul li a:hover {
+    background-color: red;
+    color: white;
+    font-size: 24px;
+    transition: all .5s;
+}
+
+.container {
+    display: block;
+    margin: 2px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#imagem {
+    border: 1px solid #111;
+    padding: 1em;
+    border-radius: 6px 3px;
+    background-color: rgb(40, 11, 109);
+    box-shadow: 2px 1px 2px #111;
+    color: white;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#topo-destaque {
+    padding-top: 10em;
+    padding-bottom: 5em;
+    text-align: center;
+    background-color: purple;
+    color: white;
+    background: url('./_img/rickandmorty.jpg') no-repeat;
+    background-position: 50% 40%;
+}
+
+.wrapper {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.topo-destaque-content {
+    font-weight: 800;
+}
+
+#art-destaque {
+    padding: 2em;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+#art-destaque h1 {
+    font-size: 60px;
+    text-shadow: 1px 1px 1px #000;
+}
+
+#art-destaque p {
+    font-size: 30px;
+    color: #000;
+}
+
+#art-destaque .texto-destaque {
+    color: green;
+    font-size: 33px;
+    text-shadow: 1px 1px 1px #fff;
+}
+
+main {
+    min-height: 40vh;
+}
+
+footer {
+    background-color: green;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}

@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+#logo {
+    margin-top: 150px;
+}
+
+.loading {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.bg-custom {
+    background-color: rgb(199, 245, 245)
+}
+
+.loading img {
+    position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-110px;
+	margin-top:-40px;
+}
